@@ -1,0 +1,40 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  padding: 24px;
+}
+
+.input-border {
+  border: 1px solid #ccc;
+
+  padding: 4px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas-border {
+  border: 1px solid #ccc;
+
+  margin-top: 8px;
+}

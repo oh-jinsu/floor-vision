@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floor Planner</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <header>
+    <h1>Floor Planner</h1>
+  </header>
+  <body>
+    <img id="imageSource" alt="source" style="display: none;" />
+    <p id="loading">OpenCV is loading...</p>
+    <input id="fileInput" class="input-border" type="file" accept="image/*" style="display: none;"/>
+    <div id="canvas-container" class="column"></div>
+  </body>
+  <footer>
+    <address>
+      By <a rel="author" href="mailto:ohjinsu98@icloud.com">Jinsu Oh</a>
+    </address>
+  </footer>
+  <script type="text/javascript">
+    const onOpenCvReady = () => {
+      document.getElementById("loading").style.display = "none";
+      
+      document.getElementById("fileInput").style.display = "unset";
+    };
+  </script>
+  <script type="module" src="/src/main.ts"></script>
+  <script async src="https://docs.opencv.org/3.4.0/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</html>
