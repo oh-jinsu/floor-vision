@@ -32,7 +32,7 @@ export const onImageLoaded = async (e: HTMLElementEventMap["load"]) => {
   const poly = new cv.MatVector();
 
   for (let i = 0; i < contours.size(); ++i) {
-    const tmp = new cv.Mat();
+    const approx = new cv.Mat();
 
     const contour = contours.get(i);
 
@@ -40,15 +40,15 @@ export const onImageLoaded = async (e: HTMLElementEventMap["load"]) => {
 
     console.log(eps);
   
-    cv.approxPolyDP(contour, tmp, 0.02 * eps, true);
+    cv.approxPolyDP(contour, approx, 0.02 * eps, true);
 
-    poly.push_back(tmp);
+    poly.push_back(approx);
 
-    console.log(tmp.col(0));
+    console.log(approx.col(0));
     
     contour.delete();
 
-    tmp.delete();
+    approx.delete();
   }
 
   const dst = cv.Mat.zeros(image.rows, image.cols, cv.CV_8UC3);
